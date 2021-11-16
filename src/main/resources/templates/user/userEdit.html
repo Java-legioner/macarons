@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Головна</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+
+<form th:method="POST" th:action="@{/user/{id}(id=${user.getId})}" th:object="${user}">
+    <div>
+        <input type="text" th:field="*{name}" />
+    </div>
+
+<!--        <select th:name="roles" th:field="*{roles}">-->
+<!--            <option th:each="role : ${roles}" th:value="${role}" th:text="${role}"></option>-->
+<!--        </select>-->
+
+    <div th:each="role : ${roles}">
+        <input type="checkbox" th:checkbox  th:name="roles" th:field="*{roles}"  th:value="${role}" th:text="${role}" />
+    </div>
+
+    </br>
+
+    <input type="submit" value="update"/>
+</form>
+
+</body>
+</html>

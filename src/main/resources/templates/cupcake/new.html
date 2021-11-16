@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New macaron</title>
+</head>
+<body>
+
+<form th:method="POST" , th:action="@{/cupcakes}" th:object="${cupcake}" enctype="multipart/form-data">
+    <input type="text" th:field="*{name}" placeholder="Name"/>
+
+    <input type="text" th:field="*{description}" placeholder="Description"/>
+
+    <input type="text" th:field="*{price}" placeholder="Price"/>
+
+    <input type="file"  name="image"  placeholder="Image">
+
+    </br>
+
+    <input type="submit" value="create"/>
+</form>
+
+</body>
+</html>

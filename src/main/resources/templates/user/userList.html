@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Головна</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+
+<div th:each="user : ${users}">
+    <a  th:text="${user.getName()}">user</a>
+
+    <a  th:text="${user.getEmail()}">email</a>
+
+    <a  th:text="${user.getRoles()}">role</a>
+
+    <a th:href="@{/user/{id}/edit (id=${user.getId()})}">Edit</a>
+
+</div>
+<!--<br/>-->
+<!--<hr/>-->
+<!--<a th:href="@{/macarons/new}">Create new macaron</a>-->
+
+</body>
+</html>
+
+
+
+
+<!--th:href="@{/macarons/{id}(id=${macaron.getId()})}"-->

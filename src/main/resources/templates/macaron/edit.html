@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update macaron</title>
+</head>
+<body>
+
+<form th:method="PATCH", th:action="@{/macarons/{id}(id=${macaron.getId})}" th:object="${macaron}">
+    <input type="text" th:field="*{name}" placeholder="Name"/>
+
+    <input type="text" th:field="*{description}" placeholder="Description"/>
+
+    <input type="text" th:field="*{price}" placeholder="Price"/>
+    </br>
+
+    <input type="submit" value="update"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Макарон</title>
+</head>
+<body>
+<p th:text="${cupcake.getName()}"></p>
+<p th:text="${cupcake.getDescription}"></p>
+<p th:text="${cupcake.getPrice}"></p>
+
+<a th:href="@{/cupcakes/{id}/edit(id=${cupcake.getId})}">Edit</a>
+<a th:href="@{/cupcakes/{id}/delete(id=${cupcake.getId})}">Delete</a>
+
+
+</body>
+</html>

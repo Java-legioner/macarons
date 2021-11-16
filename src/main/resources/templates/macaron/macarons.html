@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Головна</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+
+<div th:each="macaron : ${macarons}">
+    <a th:href="@{/macarons/{id}(id=${macaron.getId()})}" th:text="${macaron.getName()}">user</a>
+    <form th:method="POST" , th:action="@{/bucket1}" th:object="${macaron}" enctype="multipart/form-data">
+        <input type="hidden" th:value="${macaron.id}" name="macaronId" />
+
+        </br>
+
+        <input type="submit" value="create"/>
+    </form>
+</div>
+<br/>
+<hr/>
+
+
+<a th:href="@{/macarons/new}">Create new macaron</a>
+
+</body>
+</html>
